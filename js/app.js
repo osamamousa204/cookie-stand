@@ -53,7 +53,7 @@ salesResule.appendChild(tr1);
 var myCookies = document.createElement('th');
         tr1.appendChild(myCookies);
         myCookies.textContent = "";
-for (var x = 0; x <= hours.length ; x++){
+for (var x = 0; x < hours.length ; x++){
          myCookies = document.createElement('th');
         tr1.appendChild(myCookies);
         myCookies.textContent = hours[x] ;
@@ -66,7 +66,7 @@ salesResule.appendChild(tr2);
 var myCookies = document.createElement('td');
         tr2.appendChild(myCookies);
         myCookies.textContent = this.location;
-for (var x = 0; x <= hours.length ; x++){
+for (var x = 0; x < hours.length ; x++){
          myCookies = document.createElement('td');
         tr2.appendChild(myCookies);
         myCookies.textContent = this.numCoocky[x] ;
@@ -86,7 +86,7 @@ salesResule.appendChild(tr3);
 var myCookies = document.createElement('td');
         tr3.appendChild(myCookies);
         myCookies.textContent = this.location;
-for (var x = 0; x <= hours.length ; x++){
+for (var x = 0; x < hours.length ; x++){
          myCookies = document.createElement('td');
         tr3.appendChild(myCookies);
         myCookies.textContent = this.numCoocky[x] ;
@@ -106,7 +106,7 @@ AllLocations.prototype.runderDubai = function(){
   var myCookies = document.createElement('td');
           tr4.appendChild(myCookies);
           myCookies.textContent = this.location;
-  for (var x = 0; x <= hours.length ; x++){
+  for (var x = 0; x < hours.length ; x++){
            myCookies = document.createElement('td');
           tr4.appendChild(myCookies);
           myCookies.textContent = this.numCoocky[x] ;
@@ -127,7 +127,7 @@ AllLocations.prototype.runderDubai = function(){
     var myCookies = document.createElement('td');
             tr5.appendChild(myCookies);
             myCookies.textContent = this.location;
-    for (var x = 0; x <= hours.length ; x++){
+    for (var x = 0; x < hours.length ; x++){
              myCookies = document.createElement('td');
             tr5.appendChild(myCookies);
             myCookies.textContent = this.numCoocky[x] ;
@@ -147,7 +147,7 @@ AllLocations.prototype.runderDubai = function(){
       var myCookies = document.createElement('td');
               tr6.appendChild(myCookies);
               myCookies.textContent = this.location;
-      for (var x = 0; x <= hours.length ; x++){
+      for (var x = 0; x < hours.length ; x++){
                myCookies = document.createElement('td');
               tr6.appendChild(myCookies);
               myCookies.textContent = this.numCoocky[x] ;
