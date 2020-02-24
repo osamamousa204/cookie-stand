@@ -14,11 +14,14 @@ return randomCutomerNumber(max,min)
  },
  counRandom : 0,
  total : 0,
+ avergeCustomer : 6.3,
+  minNumcustomer : 23,
+  maxNumCustomer : 65,
  numCoocky : [],
  totalCoockies : function (){
   
   for (var i = 0;i < hours.length ; i++){
-    this.counRandom = Math.floor(this.seatleRandom(65,23) * 6.3); 
+    this.counRandom = Math.floor(this.seatleRandom(this.maxNumCustomer,this.minNumcustomer) * this.avergeCustomer); 
     this.total = this.total + this.counRandom;
     this.numCoocky[i] = this.counRandom
     }
@@ -55,11 +58,14 @@ var tokyo = {
    
   counRandom : 0,
  total : 0,
+ avergeCustomer : 1.2,
+  minNumcustomer : 3,
+  maxNumCustomer : 24,
  numCoocky : [],
  totalCoockies : function (){
   
   for (var i = 0;i < hours.length ; i++){
-    this.counRandom = Math.floor(this.tokyoRandom(24,3) * 1.2); 
+    this.counRandom = Math.floor(this.tokyoRandom(this.maxNumCustomer,this.minNumcustomer) * this.avergeCustomer); 
     this.total = this.total + this.counRandom;
     this.numCoocky[i] = this.counRandom
     }
@@ -96,11 +102,14 @@ var tokyo = {
      
      counRandom : 0,
      total : 0,
+     avergeCustomer : 3.7,
+     minNumcustomer : 11,
+     maxNumCustomer : 38,
      numCoocky : [],
      totalCoockies : function (){
       
       for (var i = 0;i < hours.length ; i++){
-        this.counRandom = Math.floor(this.dubaiRandom(38,11) * 3.7); 
+        this.counRandom = Math.floor(this.dubaiRandom(this.maxNumCustomer,this.minNumcustomer) * this.avergeCustomer); 
         this.total = this.total + this.counRandom;
         this.numCoocky[i] = this.counRandom
         }
@@ -141,11 +150,14 @@ var tokyo = {
      
      counRandom : 0,
      total : 0,
+     avergeCustomer : 2.3,
+     minNumcustomer : 20,
+     maxNumCustomer : 38,
      numCoocky : [],
      totalCoockies : function (){
       
       for (var i = 0;i < hours.length ; i++){
-        this.counRandom = Math.floor(this.parisRandom(38,20) * 2.3); 
+        this.counRandom = Math.floor(this.parisRandom(this.maxNumCustomer,this.maxNumCustomer) * this.avergeCustomer); 
         this.total = this.total + this.counRandom;
         this.numCoocky[i] = this.counRandom
         }
@@ -182,11 +194,14 @@ var tokyo = {
        
        counRandom : 0,
        total : 0,
+       avergeCustomer : 4.6,
+       minNumcustomer : 2,
+       maxNumCustomer : 16,
        numCoocky : [],
        totalCoockies : function (){
         
         for (var i = 0;i < hours.length ; i++){
-          this.counRandom = Math.floor(this.limaRandom(16,2) * 4.6); 
+          this.counRandom = Math.floor(this.limaRandom(this.maxNumCustomer,this.maxNumCustomer) * this.avergeCustomer); 
           this.total = this.total + this.counRandom;
           this.numCoocky[i] = this.counRandom
           }
