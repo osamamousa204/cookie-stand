@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(41, 16, 66);
+}
+header{
+    background-color: darkblue;
+    color: darkgray;
+
+}
+
+nav{
+    margin: auto;
+}
+h1{
+    text-align: center;
+    padding: 15px;
+}
+ul{
+    list-style: none;
+    margin: auto;
+}
+ul li{
+    display: inline-block;
+    margin: auto 25px;
+}
+ul li a{
+    color: darkgray;
+font-size: 25px;
+}
+img{
+    margin: 8px;
+    width: 200px;
+}
