@@ -219,10 +219,10 @@ AllLocations.prototype.theButtomRow();
 
 
 //   }
-function renderHeaderRow()
-{
+// function renderHeaderRow()
+// {
 
-}
+// }
 //   AllLocations.prototype.runderParis = function(){
 //     var contaner = document.getElementById('sales');
 //     var tr5 = document.createElement('tr');
