@@ -33,6 +33,8 @@ AllLocations.prototype.totalCoockies = function () {
 
 
 }
+////////////here i passed my paramiters/////////////
+
 var seatle = new AllLocations('seattle', 6.3, 23, 65);
 var tokyo = new AllLocations('tokyo', 1.2, 3, 24);
 var dubai = new AllLocations('dubai', 3.7, 11, 38);
@@ -44,7 +46,7 @@ for(var i = 0;i<allObjects.length;i++){
 }
 
 
-//this function will create the header of the table
+////////this function will create the header of the table/////////
 
 var salesResule;
 AllLocations.prototype.runderhours = function () {
@@ -94,7 +96,7 @@ AllLocations.prototype.runder = function () {
 // this function will create the buttom of the table
 
 AllLocations.prototype.theButtomRow= function  (){
-  var total = 0;
+  
   var allTotals = 0;
   var tr7 = document.createElement('tr');
   salesResule.appendChild(tr7);
@@ -102,12 +104,14 @@ AllLocations.prototype.theButtomRow= function  (){
   tr7.appendChild(myCookies);
   myCookies.textContent = "Totals";
   for (var x = 0; x < hours.length; x++) {
+    var total = 0;
+    for (var j = 0 ; j < allObjects.length ; j++){
+      total = total + allObjects[j].numCoocky[x]
+    }
     myCookies = document.createElement('td');
     tr7.appendChild(myCookies);
-    total = total + seatle.numCoocky[x] + tokyo.numCoocky[x] + dubai.numCoocky[x] + paris.numCoocky[x] + lima.numCoocky[x];
-    myCookies.textContent = total;
-    total = 0;
-    allTotals = allTotals + seatle.numCoocky[x] + tokyo.numCoocky[x] + dubai.numCoocky[x] + paris.numCoocky[x] + lima.numCoocky[x];;
+    myCookies.textContent = total
+    allTotals = allTotals + total
   }
   myCookies = document.createElement('td');
   tr7.appendChild(myCookies);
