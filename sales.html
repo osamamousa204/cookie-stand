@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="css/sales.css">
 </head>
 <body>
+<form action="" id="creatNewShop" >
+    <fieldset>
+        <legend>here you can add your own shop</legend>
+        <label for="nameOfShop">The neme of the location </label>
+        <input type="text" id="nameOfShop" maxlength="10" required minlength="4">
+        <hr>
+        <label for="minNumCust">The minimum number of customer</label>
+        <input type="number" id="minNumCust" required ">
+        <hr>
+        <label for="maxNumCust">The maximum number of customer</label>
+        <input type="number" id="maxNumCust" required>
+        <hr>
+        <label for="avgNumCust">The avarege number of customer</label>
+        <input type="float" id="avgNumCust" required min="0" step="1">
+        <hr>
+        <input type="submit" value="Create">
+    </fieldset>
+</form>
+
     <div id = "sales">
 
 

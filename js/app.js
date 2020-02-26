@@ -95,6 +95,37 @@ AllLocations.prototype.runder = function () {
 
 // this function will create the buttom of the table
 
+
+
+
+AllLocations.prototype.runderhours();
+AllLocations.prototype.runder();
+
+var creatShop = document.getElementById('creatNewShop');
+creatShop.addEventListener('submit' , function (event){
+event.preventDefault();
+var nameOfShop = event.target.nameOfShop.value;
+var minOfCustomers = event.target.minNumCust.value;
+var maxOfCustomers = event.target.maxNumCust.value;
+var avgOfCustomers = event.target.avgNumCust.value;
+console.log(nameOfShop)
+
+if(minOfCustomers < maxOfCustomers){
+  alert('the minimum can not be bigger than the maximum');
+
+}
+
+
+
+var newShop = new AllLocations (nameOfShop,avgOfCustomers,minOfCustomers,maxOfCustomers)
+newShop.randomNumber(newShop.maxNumCustomer,newShop.minNumcustomer);
+newShop.totalCoockies();
+newShop.runder();
+
+})
+
+
+console.log(AllLocations)
 AllLocations.prototype.theButtomRow= function  (){
   
   var allTotals = 0;
@@ -118,17 +149,7 @@ AllLocations.prototype.theButtomRow= function  (){
   myCookies.textContent = `${allTotals}`;
 
 }
-
-
-AllLocations.prototype.runderhours();
-AllLocations.prototype.runder();
 AllLocations.prototype.theButtomRow();
-
-
-
-
-
-
 
 
 
