@@ -7,7 +7,7 @@ table , tr ,th , td {
 border: 2px solid #000000;
 background-color: rgb(218, 226, 240);
 font-size: 25px;
-margin: auto;
+margin: 50px auto;
 }
 a{
     display: block;
