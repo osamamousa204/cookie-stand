@@ -7,9 +7,6 @@ function randomCutomerNumber(max, min) {
   return randomCutomer;
 }
 
-
-
-
 var allObjects = [];
 
 function AllLocations(name, avergeCustomer, minNumcustomer, maxNumCustomer) {
@@ -36,6 +33,8 @@ AllLocations.prototype.totalCoockies = function () {
 
 
 }
+////////////here i passed my paramiters/////////////
+
 var seatle = new AllLocations('seattle', 6.3, 23, 65);
 var tokyo = new AllLocations('tokyo', 1.2, 3, 24);
 var dubai = new AllLocations('dubai', 3.7, 11, 38);
@@ -45,6 +44,10 @@ for(var i = 0;i<allObjects.length;i++){
   allObjects[i].randomNumber(this.maxNumCustomer,this.minNumcustomer);
   allObjects[i].totalCoockies();
 }
+
+
+////////this function will create the header of the table/////////
+
 var salesResule;
 AllLocations.prototype.runderhours = function () {
   var contaner = document.getElementById('sales');
@@ -70,84 +73,30 @@ AllLocations.prototype.runderhours = function () {
 
 
 }
+// this function create the body of the table
+
 AllLocations.prototype.runder = function () {
-  
-  var tr2 = document.createElement('tr');
-  salesResule.appendChild(tr2);
-  var myCookies = document.createElement('td');
-  tr2.appendChild(myCookies);
-  myCookies.textContent = seatle.location;
-  for (var x = 0; x < hours.length; x++) {
-    myCookies = document.createElement('td');
+  for(var i = 0;i< allObjects.length;i++){
+    var tr2 = document.createElement('tr');
+    salesResule.appendChild(tr2);
+    var myCookies = document.createElement('td');
     tr2.appendChild(myCookies);
-    myCookies.textContent = seatle.numCoocky[x];
-  }
+    myCookies.textContent = allObjects[i].location;
+    for (var x = 0; x < hours.length; x++) {
+      myCookies = document.createElement('td');
+      tr2.appendChild(myCookies);
+      myCookies.textContent = allObjects[i].numCoocky[x];
+    }
   myCookies = document.createElement('td');
   tr2.appendChild(myCookies);
-  myCookies.textContent = `${seatle.total}`;
-  //tr3
-  var tr3 = document.createElement('tr');
-  salesResule.appendChild(tr3);
-  var myCookies = document.createElement('td');
-  tr3.appendChild(myCookies);
-  myCookies.textContent = tokyo.location;
-  for (var x = 0; x < hours.length; x++) {
-    myCookies = document.createElement('td');
-    tr3.appendChild(myCookies);
-    myCookies.textContent = tokyo.numCoocky[x];
-  }
-  myCookies = document.createElement('td');
-  tr3.appendChild(myCookies);
-  myCookies.textContent = `${tokyo.total}`;
-
-  //tr4
-  var tr4 = document.createElement('tr');
-  salesResule.appendChild(tr4);
-  var myCookies = document.createElement('td');
-  tr4.appendChild(myCookies);
-  myCookies.textContent = dubai.location;
-  for (var x = 0; x < hours.length; x++) {
-    myCookies = document.createElement('td');
-    tr4.appendChild(myCookies);
-    myCookies.textContent = dubai.numCoocky[x];
-  }
-  myCookies = document.createElement('td');
-  tr4.appendChild(myCookies);
-  myCookies.textContent = `${dubai.total}`;
-
-  //tr5
-  var tr5 = document.createElement('tr');
-  salesResule.appendChild(tr5);
-  var myCookies = document.createElement('td');
-  tr5.appendChild(myCookies);
-  myCookies.textContent = paris.location;
-  for (var x = 0; x < hours.length; x++) {
-    myCookies = document.createElement('td');
-    tr5.appendChild(myCookies);
-    myCookies.textContent = paris.numCoocky[x];
-  }
-  myCookies = document.createElement('td');
-  tr5.appendChild(myCookies);
-  myCookies.textContent = `${paris.total}`;
-  //tr6
-  var tr6 = document.createElement('tr');
-  salesResule.appendChild(tr6);
-  var myCookies = document.createElement('td');
-  tr6.appendChild(myCookies);
-  myCookies.textContent = lima.location;
-  for (var x = 0; x < hours.length; x++) {
-    myCookies = document.createElement('td');
-    tr6.appendChild(myCookies);
-    myCookies.textContent = lima.numCoocky[x];
-  }
-  myCookies = document.createElement('td');
-  tr6.appendChild(myCookies);
-  myCookies.textContent = `${lima.total}`;
-
+  myCookies.textContent = `${allObjects[i].total}`;
+}  
 }
 
+// this function will create the buttom of the table
+
 AllLocations.prototype.theButtomRow= function  (){
-  var total = 0;
+  
   var allTotals = 0;
   var tr7 = document.createElement('tr');
   salesResule.appendChild(tr7);
@@ -155,19 +104,18 @@ AllLocations.prototype.theButtomRow= function  (){
   tr7.appendChild(myCookies);
   myCookies.textContent = "Totals";
   for (var x = 0; x < hours.length; x++) {
+    var total = 0;
+    for (var j = 0 ; j < allObjects.length ; j++){
+      total = total + allObjects[j].numCoocky[x]
+    }
     myCookies = document.createElement('td');
     tr7.appendChild(myCookies);
-    total = total + seatle.numCoocky[x] + tokyo.numCoocky[x] + dubai.numCoocky[x] + paris.numCoocky[x] + lima.numCoocky[x];
-    myCookies.textContent = total;
-    total = 0;
-    allTotals = allTotals + seatle.numCoocky[x] + tokyo.numCoocky[x] + dubai.numCoocky[x] + paris.numCoocky[x] + lima.numCoocky[x];;
+    myCookies.textContent = total
+    allTotals = allTotals + total
   }
   myCookies = document.createElement('td');
   tr7.appendChild(myCookies);
   myCookies.textContent = `${allTotals}`;
-
-
-
 
 }
 
@@ -175,6 +123,30 @@ AllLocations.prototype.theButtomRow= function  (){
 AllLocations.prototype.runderhours();
 AllLocations.prototype.runder();
 AllLocations.prototype.theButtomRow();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // console.log(allObjects)
 // //seattle
 // var seatle = new AllLocations('seattle', 6.3, 23, 65);
@@ -219,10 +191,10 @@ AllLocations.prototype.theButtomRow();
 
 
 //   }
-function renderHeaderRow()
-{
+// function renderHeaderRow()
+// {
 
-}
+// }
 //   AllLocations.prototype.runderParis = function(){
 //     var contaner = document.getElementById('sales');
 //     var tr5 = document.createElement('tr');
