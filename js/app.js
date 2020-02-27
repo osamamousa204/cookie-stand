@@ -18,6 +18,8 @@ function AllLocations(name, avergeCustomer, minNumcustomer, maxNumCustomer) {
   this.total = 0;
   this.numCoocky = [];
   allObjects.push(this);
+  //   this.runder();
+  //   this.theButtomRow();
 }
 
 AllLocations.prototype.randomNumber = function (max, min) {
@@ -40,8 +42,8 @@ var tokyo = new AllLocations('tokyo', 1.2, 3, 24);
 var dubai = new AllLocations('dubai', 3.7, 11, 38);
 var paris = new AllLocations('paris', 2.3, 20, 38);
 var lima = new AllLocations('lima', 4.6, 2, 16);
-for(var i = 0;i<allObjects.length;i++){
-  allObjects[i].randomNumber(this.maxNumCustomer,this.minNumcustomer);
+for (var i = 0; i < allObjects.length; i++) {
+  allObjects[i].randomNumber(this.maxNumCustomer, this.minNumcustomer);
   allObjects[i].totalCoockies();
 }
 
@@ -73,10 +75,10 @@ AllLocations.prototype.runderhours = function () {
 
 
 }
-// this function create the body of the table
+////////// this function create the body of the table//////////
 
 AllLocations.prototype.runder = function () {
-  for(var i = 0;i< allObjects.length;i++){
+  for (var i = 0; i < allObjects.length; i++) {
     var tr2 = document.createElement('tr');
     salesResule.appendChild(tr2);
     var myCookies = document.createElement('td');
@@ -87,47 +89,38 @@ AllLocations.prototype.runder = function () {
       tr2.appendChild(myCookies);
       myCookies.textContent = allObjects[i].numCoocky[x];
     }
-  myCookies = document.createElement('td');
-  tr2.appendChild(myCookies);
-  myCookies.textContent = `${allObjects[i].total}`;
-}  
-}
-
-// this function will create the buttom of the table
-
-
-
-
-AllLocations.prototype.runderhours();
-AllLocations.prototype.runder();
-
-var creatShop = document.getElementById('creatNewShop');
-creatShop.addEventListener('submit' , function (event){
-event.preventDefault();
-var nameOfShop = event.target.nameOfShop.value;
-var minOfCustomers = event.target.minNumCust.value;
-var maxOfCustomers = event.target.maxNumCust.value;
-var avgOfCustomers = event.target.avgNumCust.value;
-console.log(nameOfShop)
-
-if(minOfCustomers < maxOfCustomers){
-  alert('the minimum can not be bigger than the maximum');
-
+    myCookies = document.createElement('td');
+    tr2.appendChild(myCookies);
+    myCookies.textContent = `${allObjects[i].total}`;
+  }
 }
 
 
 
-var newShop = new AllLocations (nameOfShop,avgOfCustomers,minOfCustomers,maxOfCustomers)
-newShop.randomNumber(newShop.maxNumCustomer,newShop.minNumcustomer);
-newShop.totalCoockies();
-newShop.runder();
 
-})
+// AllLocations.prototype.runderhours();
+
+// AllLocations.prototype.runder();
+////////////////runder the user object//////////////////
 
 
-console.log(AllLocations)
-AllLocations.prototype.theButtomRow= function  (){
-  
+
+
+
+
+
+
+
+
+
+
+
+/////////// this function will create the buttom of the table///////////
+
+
+AllLocations.prototype.theButtomRow = function () {
+
+
   var allTotals = 0;
   var tr7 = document.createElement('tr');
   salesResule.appendChild(tr7);
@@ -136,7 +129,7 @@ AllLocations.prototype.theButtomRow= function  (){
   myCookies.textContent = "Totals";
   for (var x = 0; x < hours.length; x++) {
     var total = 0;
-    for (var j = 0 ; j < allObjects.length ; j++){
+    for (var j = 0; j < allObjects.length; j++) {
       total = total + allObjects[j].numCoocky[x]
     }
     myCookies = document.createElement('td');
@@ -149,23 +142,59 @@ AllLocations.prototype.theButtomRow= function  (){
   myCookies.textContent = `${allTotals}`;
 
 }
-AllLocations.prototype.theButtomRow();
+
+// AllLocations.prototype.theButtomRow();
+
+
+var allFunctions = [AllLocations.prototype.runderhours(), AllLocations.prototype.runder(), AllLocations.prototype.theButtomRow()]
 
 
 
+///////////////create a new object ///////////////
 
+var creatShop = document.getElementById('creatNewShop');
+creatShop.addEventListener('submit', function (event) {
+  event.preventDefault();
+  var nameOfShop = event.target.nameOfShop.value;
+  var minOfCustomers = parseInt(event.target.minNumCust.value);
+  var maxOfCustomers = parseInt(event.target.maxNumCust.value);
+  var avgOfCustomers = parseInt(event.target.avgNumCust.value);
 
+  
 
+  var newShop = new AllLocations(nameOfShop, avgOfCustomers, minOfCustomers, maxOfCustomers)
+  newShop.randomNumber(this.maxNumCustomer, this.minNumcustomer);
+  newShop.totalCoockies();
 
+  AllLocations.prototype.runderUserObject = function () {
+    var tr3 = document.createElement('tr');
+    salesResule.appendChild(tr3);
+    var myCookies = document.createElement('td');
+    tr3.appendChild(myCookies);
+    myCookies.textContent = newShop.location;
+    for (var x = 0; x < hours.length; x++) {
+      myCookies = document.createElement('td');
+      tr3.appendChild(myCookies);
+      myCookies.textContent = newShop.numCoocky[x];
+    }
+    myCookies = document.createElement('td');
+    tr3.appendChild(myCookies);
+    myCookies.textContent = `${newShop.total}`;
+  }
+  creatShop.reset();
+  salesResule.removeChild(salesResule.lastChild);
+  newShop.runderUserObject();
+  AllLocations.prototype.theButtomRow()
 
+  
+})
+console.log(allFunctions)
+for(var n = 0 ; n < allFunctions.length ; n++){
 
-
-
-
-
-
-
-
+  allFunctions[n]
+  
+  
+  }
 
 
 // console.log(allObjects)
