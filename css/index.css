@@ -1,32 +1,154 @@
 body{
-    background-color: rgb(41, 16, 66);
+    background-color: darkturquoise;
+}
+
+#container{
+width: 1000px;
+margin: 0px auto;
+background-color: #f1f9f9;
+padding: 5px;
 }
 header{
-    background-color: darkblue;
-    color: darkgray;
-
+    
+    background-color: #e1f2fb;
 }
-
-nav{
-    margin: auto;
-}
-h1{
-    text-align: center;
+#headlogo{
+    overflow: hidden;
     padding: 15px;
 }
-ul{
-    list-style: none;
-    margin: auto;
+#logo{
+    width: 212px;
+    margin: 5px;
+    float: left;
+    margin-left: 14px;
+    transition: .5s ease-in-out all;
+    animation: rotatelogo 2.5s ease-in-out infinite ;
+
 }
-ul li{
+#logo:hover{
+transform: scale(.85);
+}
+header h1{
+    float: right;
+    text-align: center;
+    margin-right: 194px;
+    margin-top: 9px;
+    font-size: 56px;
+    font-family: 'Trade Winds' ;
+   
+}
+nav{
+    margin: 0px ;
+    padding: 0px;
+}
+header ul{
+    margin: 0px;
+    padding: 0px;
+}
+header ul li{
     display: inline-block;
-    margin: auto 25px;
+    list-style: none;
+    position: relative;
+    bottom: 7px;
 }
-ul li a{
-    color: darkgray;
-font-size: 25px;
+header ul li:hover{
+background-color: rgb(240, 169, 183);
 }
-img{
-    margin: 8px;
-    width: 200px;
+header ul li a{
+    font-size: 33px;
+    margin: auto 95px;
+    text-decoration: none;
+}
+#li1{
+    border-left: 3px solid rgb(20, 19, 19);
+    border-right: 3px solid rgb(8, 8, 8);
+}
+main{
+    margin: 10px auto;
+    background-color: #f3dfe3;
+}
+#family{
+    height: 280px;
+    border: 2px solid black;
+    margin: 4px auto;
+}
+ #family img{
+    width: 424px; 
+    float: left;
+    border-radius: 10%;
+    margin: 15px;    
+ }
+ #family p{
+     margin-top: 25px;
+     position: relative;
+     top: 30px;
+     font-size: 21px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     line-height: 50px;
+ }
+
+ #product{
+     
+     border: 2px solid black;
+     overflow: hidden;
+     padding: 5px;
+    }
+
+    #product #prodiv  h2{
+        float: right;
+        margin-right: 226px;
+        font-size: 44px;
+        color: rgb(54, 54, 6);
+        
+    }  
+
+    #logo2{
+        width: 187px;
+        float: left;
+        border-radius: 50%;
+        transition: .5s all ease-in-out;
+       
+    }
+    @keyframes rotatelogo{
+        100%,0%{
+            transform: rotateY(0deg);
+        }
+        50%{
+            transform: rotatey(180deg);
+        }
+    }
+    #prodiv{
+        overflow: hidden;
+        padding: 10px;
+    }
+
+
+    .img2{
+        width: 280px;
+        margin: 30px 22px;
+        border-radius: 10%;
+        transition: all ease-in-out .7s;
+    }
+    .img2:hover{
+        transform: scale(.9);
+    }
+
+table{
+    background-color: #e9b2bc;
+    margin: 5px auto;
+}
+table,tr,th,td{
+    border: 2px solid #000;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(14, 12, 12);
+}
+ 
+
+footer{
+    background-color: rgb(235, 216, 209);
+}
+footer p{
+    margin: 5px auto;
+    text-align: center;
 }
