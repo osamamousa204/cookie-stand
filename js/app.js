@@ -161,7 +161,10 @@ creatShop.addEventListener('submit', function (event) {
 
   var avgOfCustomers = parseInt(event.target.avgNumCust.value);
 
-  var newShop = new AllLocations(nameOfShop, avgOfCustomers, minOfCustomers, maxOfCustomers);
+  if (minOfCustomers >= maxOfCustomers){
+    alert('the min should not be greater than the max ')
+  }else{
+    var newShop = new AllLocations(nameOfShop, avgOfCustomers, minOfCustomers, maxOfCustomers);
 
   newShop.randomNumber(this.maxNumCustomer, this.minNumcustomer);
 
@@ -172,6 +175,10 @@ creatShop.addEventListener('submit', function (event) {
   salesResule.remove(salesResule);
 
   invoke();
+
+  }
+
+  
  
 })
 
